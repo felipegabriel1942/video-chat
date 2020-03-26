@@ -41,9 +41,7 @@ export class AppComponent implements OnInit {
 
     peerx.on('stream', function(stream) {
       video.srcObject = stream;
-      setTimeout(() => {
-        video.play();
-      }, 1000);
+      video.play();
     });
 
     }, function(err) {
