@@ -22,11 +22,10 @@ export class AppComponent implements OnInit {
     let peerx: any;
     this.n.getUserMedia = (this.n.getUserMedia || this.n.webkitGetUserMedia || this.n.mozGetUserMedia || this.n.msGetUserMedia);
     this.n.getUserMedia({video: true, audio: true}, function(stream) {
-
     peerx = new SimplePeer ({
       initiator: location.hash === '#init',
       trickle: false,
-      stream:stream
+      stream: stream
     });
 
     peerx.on('signal', function(data) {
@@ -40,11 +39,13 @@ export class AppComponent implements OnInit {
 
     peerx.on('stream', function(stream) {
       video.srcObject = stream;
-      video.play();
+      setTimeout(() => {
+        video.play();
+      }, 1000);
     });
 
-    }, function(err){
-    console.log('Failed to get stream', err);
+    }, function(err) {
+      console.log('Failed to get stream', err);
     });
 
     setTimeout(() => {
