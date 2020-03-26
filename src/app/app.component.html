@@ -1,0 +1,12 @@
+<h1>
+  Video chat
+</h1>
+<video #myvideo></video>
+<br/>
+<input type="text" [(ngModel)]="targetpeer" />
+<button (click)="connect()">Conectar</button>
+<button (click)="message()">Enviar mensagem</button>
+<br/>
+
+<label>Token de conexão</label><br/>
+<textarea cols=100 rows="30" #textAreaConexao id="signal"></textarea>
