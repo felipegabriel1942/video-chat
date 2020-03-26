@@ -25,7 +25,8 @@ export class AppComponent implements OnInit {
     peerx = new SimplePeer ({
       initiator: location.hash === '#init',
       trickle: false,
-      stream: stream
+      stream: stream,
+      config: { iceServers: [{ urls: 'stun:stun.l.google.com:19302' }, { urls: 'stun:global.stun.twilio.com:3478?transport=udp' }] }
     });
 
     peerx.on('signal', function(data) {
