@@ -26,7 +26,8 @@ export class AppComponent implements OnInit {
       initiator: location.hash === '#init',
       trickle: false,
       stream: stream,
-      config: { iceServers: [{ urls: 'stun:stun.l.google.com:19302' }, { urls: 'stun:global.stun.twilio.com:3478?transport=udp' }] }
+      config: { iceServers: [{ urls: 'stun:numb.viagenie.ca', username: 'pinheiro_felipeg@yahoo.com.br', credential: 'amor1805'} ]
+      }
     });
 
     peerx.on('signal', function(data) {
